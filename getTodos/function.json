@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route": "todos",
+      "methods": ["get"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocuments",
+      "databaseName": "todoDataBase",
+      "collectionName": "todoCollection",
+      "connectionStringSetting": "functionsdemo_DOCUMENTDB",
+      "partitionKey": "/id",
+      "sqlQuery": "SELECT * FROM t ORDER BY t.id ASC"
+    }
+  ],
+  "scriptFile": "../dist/getData/index.js"
+}
