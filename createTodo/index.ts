@@ -7,7 +7,7 @@ const createTodo: AzureFunction = async (
   req: HttpRequest
 ) => {
   context.log("HTTP trigger createTodo processed a request.");
-  const name = req.body && (req.body.name as String);
+  const name = req.body && (req.body.name as string);
   if (name && name.length > 0) {
     const result = {
       id: uuidv4(),

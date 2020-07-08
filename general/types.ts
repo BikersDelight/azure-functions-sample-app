@@ -4,7 +4,7 @@ export enum EState {
 }
 
 export type TTodo = {
-  id: String;
-  name: String;
+  id: string;
+  name: string;
   state: EState;
 };
