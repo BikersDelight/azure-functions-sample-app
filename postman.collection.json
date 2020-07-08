@@ -1,0 +1,62 @@
+{
+  "info": {
+    "_postman_id": "a9b4d605-f2c1-4769-afd8-a021bb3af9cb",
+    "name": "Azure Functions Todo Example",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getTodos",
+      "_postman_id": "a2981ca3-4f3e-4b14-ad70-452cbba2d321",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7071/api/todos?state=todo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7071",
+          "path": ["api", "todos"],
+          "query": [{ "key": "state", "value": "todo" }]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createTodo",
+      "_postman_id": "360693b1-a44e-47db-baa5-5915a62d107e",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Delete document function\"\n}"
+        },
+        "url": "http://localhost:7071/api/todos"
+      },
+      "response": []
+    },
+    {
+      "name": "updateTodo",
+      "_postman_id": "8ff51644-1f47-4952-bedb-c3363300a700",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": { "mode": "raw", "raw": "{\n    \"state\": \"done\"\n}" },
+        "url": "http://localhost:7071/api/todos/2d71356b-c47c-421c-b40c-efb7170a6e15"
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTodo",
+      "_postman_id": "277bbc87-555c-48d4-9cdf-b6f34a1d4749",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:7071/api/todos/2d71356b-c47c-421c-b40c-efb7170a6e15"
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

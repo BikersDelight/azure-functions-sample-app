@@ -5,8 +5,8 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "todos",
-      "methods": ["get"]
+      "methods": ["post"],
+      "route": "todos"
     },
     {
       "type": "http",
@@ -15,14 +15,14 @@
     },
     {
       "type": "cosmosDB",
-      "direction": "in",
-      "name": "inputDocuments",
+      "name": "outputDocument",
       "databaseName": "todoDataBase",
       "collectionName": "todoCollection",
+      "createIfNotExists": true,
       "connectionStringSetting": "functionsdemo_DOCUMENTDB",
-      "partitionKey": "/id",
-      "sqlQuery": "SELECT * FROM t"
+      "direction": "out",
+      "partitionKey": "/id"
     }
   ],
-  "scriptFile": "../dist/getTodos/index.js"
+  "scriptFile": "../dist/createTodo/index.js"
 }

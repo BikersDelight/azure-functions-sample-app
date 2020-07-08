@@ -5,8 +5,8 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "todos",
-      "methods": ["get"]
+      "methods": ["put"],
+      "route": "todos/{id}"
     },
     {
       "type": "http",
@@ -21,8 +21,18 @@
       "collectionName": "todoCollection",
       "connectionStringSetting": "functionsdemo_DOCUMENTDB",
       "partitionKey": "/id",
-      "sqlQuery": "SELECT * FROM t"
+      "sqlQuery": "SELECT TOP 1 * FROM s WHERE s.id = {id}"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "outputDocument",
+      "databaseName": "todoDataBase",
+      "collectionName": "todoCollection",
+      "createIfNotExists": true,
+      "connectionStringSetting": "functionsdemo_DOCUMENTDB",
+      "direction": "out",
+      "partitionKey": "/id"
     }
   ],
-  "scriptFile": "../dist/getTodos/index.js"
+  "scriptFile": "../dist/updateTodo/index.js"
 }
