@@ -6,7 +6,7 @@
 
 First set up a cosmos db in Azure with name `todoDataBase` and in there a container with name `todoCollection`.
 
-Create a file named 'local.settings.json' in the root folder of the project with following contents:
+Create a file named `local.settings.json` in the root folder of the project with following contents:
 
 ```json
 {
@@ -15,8 +15,8 @@ Create a file named 'local.settings.json' in the root folder of the project with
     "AzureWebJobsStorage": "",
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "functionsdemo_DOCUMENTDB": "Add cosmos db connection string here",
-    "cosmosEndpoint": "add cosmos db endpoint here",
-    "cosmosKey": "add cosmos db key here"
+    "cosmosEndpoint": "Add cosmos db endpoint here",
+    "cosmosKey": "Add cosmos db key here"
   }
 }
 ```
