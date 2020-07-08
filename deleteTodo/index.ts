@@ -15,8 +15,8 @@ const deleteTodo: AzureFunction = async (
         key: process.env.cosmosKey,
       });
       const container = client
-        .database(process.env.cosmosDatabase)
-        .container(process.env.cosmosCollection);
+        .database("todoDataBase")
+        .container("todoColletion");
       const item = container.item(todoId, todoId);
       await item.delete();
       context.res = {
