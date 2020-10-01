@@ -17,19 +17,19 @@
       "type": "cosmosDB",
       "direction": "in",
       "name": "inputDocuments",
-      "databaseName": "todoDataBase",
+      "databaseName": "todossampleapp",
       "collectionName": "todoCollection",
-      "connectionStringSetting": "functionsdemo_DOCUMENTDB",
+      "connectionStringSetting": "cosmos_connection_string",
       "partitionKey": "/id",
       "sqlQuery": "SELECT TOP 1 * FROM s WHERE s.id = {id}"
     },
     {
       "type": "cosmosDB",
       "name": "outputDocument",
-      "databaseName": "todoDataBase",
+      "databaseName": "todossampleapp",
       "collectionName": "todoCollection",
       "createIfNotExists": true,
-      "connectionStringSetting": "functionsdemo_DOCUMENTDB",
+      "connectionStringSetting": "cosmos_connection_string",
       "direction": "out",
       "partitionKey": "/id"
     }

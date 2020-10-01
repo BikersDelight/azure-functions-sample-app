@@ -16,10 +16,10 @@
     {
       "type": "cosmosDB",
       "name": "outputDocument",
-      "databaseName": "todoDataBase",
+      "databaseName": "todossampleapp",
       "collectionName": "todoCollection",
       "createIfNotExists": true,
-      "connectionStringSetting": "functionsdemo_DOCUMENTDB",
+      "connectionStringSetting": "cosmos_connection_string",
       "direction": "out",
       "partitionKey": "/id"
     }
